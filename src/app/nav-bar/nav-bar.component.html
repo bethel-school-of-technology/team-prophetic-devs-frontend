@@ -1,13 +1,14 @@
 
 <mat-toolbar color="primary">
-  <button mat-button [matMenuTriggerFor]="nav" mat-icon-button><mat-icon>menu</mat-icon></button>
-  <mat-menu #nav="matMenu">
-    <button mat-menu-item href="/home">Home</button>
+  <button mat-button [matMenuTriggerFor]="menu" mat-icon-button><mat-icon>menu</mat-icon></button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="home">Home</button>
     <mat-divider></mat-divider>
-    <button mat-menu-item href="/profile">Profile</button>
+    <button mat-menu-item routerLink="profile">Profile</button>
     <mat-divider></mat-divider>
-    <button mat-menu-item color="warn" href="/logout">Logout</button>
+    <button mat-menu-item routerLink="login">Login</button>
   </mat-menu>
   <span>OpenMic</span>
+  <span></span>
 </mat-toolbar>
 
