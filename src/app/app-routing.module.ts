@@ -10,7 +10,7 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
 const routes: Routes = [
   {
     path: 'home',
-    component: HomePageComponent
+    component: HomePageComponent,
   },
   {
     path: 'login',

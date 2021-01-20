@@ -1,0 +1,25 @@
+{
+  "groupies": [
+    {
+      "_id":"1",
+      "firstName":"Josiah",
+      "lastName":"Sanchez",
+      "email":"josiahbear223@gmail.com",
+      "password":"Yoda1215"
+    },
+    {
+      "_id":"2",
+      "firstName":"Palmer",
+      "lastName":"Williams",
+      "email":"palmer.williams1234@gmail.com",
+      "password":"Vader1215"
+    },
+    {
+      "_id":"3",
+      "firstName":"David",
+      "lastName":"Nelson",
+      "email":"david.nelson1234@gmail.com",
+      "password":"Luke1215"
+    }
+  ]
+}

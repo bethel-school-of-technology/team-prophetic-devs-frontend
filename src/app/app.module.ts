@@ -2,10 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AllMaterialComponentsModule } from './Angular Material Imports/all-material-components.module';
+import { FormsModule } from '@angular/forms';
 //Routing Imports
 import { AppRoutingModule } from './app-routing.module';
 
-//Component Imports
+//Display Component Imports
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -15,6 +16,7 @@ import { ChatWindowComponent } from './home-page/ChatWindowFolder/ChatWindowComp
 import { RegisterComponent } from './login-page/register/register.component';
 import { LogInComponent } from './login-page/log-in/log-in.component';
 
+//imports for users
 
 
 
@@ -28,13 +30,14 @@ import { LogInComponent } from './login-page/log-in/log-in.component';
     ProfilePageComponent,
     ChatWindowComponent,
     RegisterComponent,
-    LogInComponent
+    LogInComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    AllMaterialComponentsModule
+    AllMaterialComponentsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
