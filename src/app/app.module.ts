@@ -10,8 +10,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { ChatWindowComponent } from './home-page/ChatWindowFolder/ChatWindowComponent/chat-window/ChatWindowFolder/chat-window.component';
-import { RegisterComponent } from './login-page/register/register.component';
-import { LogInComponent } from './login-page/log-in/log-in.component';
+
 import { AboutUsComponent } from './about-us/about-us.component';
 
 //imports for users
@@ -33,6 +32,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 
 import { LogInComponent } from './components/log-in/log-in.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AllMaterialComponentsModule } from './Angular Material Imports/all-material-components.module';
 
 
 @NgModule({
