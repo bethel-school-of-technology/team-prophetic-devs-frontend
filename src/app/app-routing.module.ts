@@ -23,7 +23,7 @@ const routes: Routes = [
   },
   {path: 'aboutUs',
   component: AboutUsComponent
- },
+  },
   {
     path: '',
     redirectTo: '/login',
