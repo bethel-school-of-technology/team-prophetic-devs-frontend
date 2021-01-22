@@ -1,9 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AllMaterialComponentsModule } from './Angular Material Imports/all-material-components.module';
-import { FormsModule } from '@angular/forms';
-//Routing Imports
+
+
 import { AppRoutingModule } from './app-routing.module';
 
 //Display Component Imports
@@ -20,6 +17,22 @@ import { AboutUsComponent } from './about-us/about-us.component';
 //imports for users
 
 
+
+
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularMaterialModule } from './angular-material.module';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
+import { FlexLayoutModule } from "@angular/flex-layout";
+
+
+import { LogInComponent } from './components/log-in/log-in.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 @NgModule({
@@ -42,6 +55,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
+
 export class AppModule { }
