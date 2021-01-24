@@ -16,6 +16,8 @@ import { ChatWindowComponent } from './home-page/ChatWindowFolder/ChatWindowComp
 import { RegisterComponent } from './login-page/register/register.component';
 import { LogInComponent } from './login-page/log-in/log-in.component';
 import { ChatSelectorComponent } from './home-page/chat-selector/chat-selector.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+
 
 //imports for users
 
@@ -33,6 +35,7 @@ import { ChatSelectorComponent } from './home-page/chat-selector/chat-selector.c
     RegisterComponent,
     LogInComponent,
     ChatSelectorComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
