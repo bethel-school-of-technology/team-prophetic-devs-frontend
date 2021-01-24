@@ -1,0 +1,34 @@
+<mat-card>
+  <mat-card-header><h1>Chatroom: {{selected}}</h1></mat-card-header>
+  <!--Group Chat Selector-->
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Select a Group Chat!</mat-panel-title>
+    </mat-expansion-panel-header>
+    <!--Buttons for differet group chats go here.-->
+      <mat-form-field class="chatSelector">
+        <mat-label>Group Chats:</mat-label>
+        <mat-select [(value)]="selected">
+          <mat-option value="OpenMic">OpenMic Chat</mat-option>
+          <mat-option value="Team-Prophetic-Devs">Team-Prophetic-Devs</mat-option>
+          <mat-option value="Worship Team">Worship Team</mat-option>
+        </mat-select>
+      </mat-form-field>
+  </mat-expansion-panel>
+
+  <!--Direct Chat Selector-->
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Select a Direct Chat!</mat-panel-title>
+    </mat-expansion-panel-header>
+    <!--Buttons for differet direct chats go here.-->
+      <mat-form-field class="chatSelector">
+        <mat-label>Group Chats:</mat-label>
+        <mat-select [(value)]="selected">
+          <mat-option value="Vali Masca">Vali Masca</mat-option>
+          <mat-option value="Palmer Williams">Palmer Williams</mat-option>
+          <mat-option value="David Nelson">David Nelson</mat-option>
+        </mat-select>
+      </mat-form-field>
+  </mat-expansion-panel>
+</mat-card>
