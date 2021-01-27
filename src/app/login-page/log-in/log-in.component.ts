@@ -6,6 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./log-in.component.css']
 })
 export class LogInComponent implements OnInit {
+  loginForm={
+    email: "",
+    password: "",
+  }
+  onLogIn(){
+    console.log("LogIn form submitted");
+    console.log(this.loginForm);
+  }
 
   constructor() { }
 
