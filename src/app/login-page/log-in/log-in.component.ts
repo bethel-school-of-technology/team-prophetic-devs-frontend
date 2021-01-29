@@ -1,4 +1,6 @@
+import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-log-in',
@@ -6,16 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./log-in.component.css']
 })
 export class LogInComponent implements OnInit {
-  loginForm={
+  loginForm = {
     email: "",
     password: "",
   }
-  onLogIn(){
+  onLogIn() {
     console.log("LogIn form submitted");
-    console.log(this.loginForm);
+    this.myUserService.logIn(this.loginForm.email, this.loginForm.password)
+      .subscribe(response => {
+        console.log(response);
+        //the alert below throws an error but works how i want it to.
+        // alert(response.message);
+        this.loginForm = {
+          email: "",
+          password: ""
+        }
+      })
   }
 
-  constructor() { }
+  constructor(private myUserService: UserService) { }
 
   ngOnInit(): void {
   }
