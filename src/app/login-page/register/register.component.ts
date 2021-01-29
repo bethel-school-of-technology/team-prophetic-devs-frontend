@@ -18,8 +18,7 @@ export class RegisterComponent implements OnInit {
     password: "",
   }
   onRegister() {
-    console.log("Login Successful");
-    console.log(this.registerForm);
+    console.log("Signup Successful");
     this.myUserService.signUp(this.registerForm.firstName, this.registerForm.lasrname, this.registerForm.email, this.registerForm.username, this.registerForm.password)
       .subscribe(response => {
         console.log(response)

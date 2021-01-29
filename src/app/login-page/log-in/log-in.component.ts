@@ -13,7 +13,6 @@ export class LogInComponent implements OnInit {
     password: "",
   }
   onLogIn() {
-    console.log("LogIn form submitted");
     this.myUserService.logIn(this.loginForm.email, this.loginForm.password)
       .subscribe(response => {
         console.log(response);

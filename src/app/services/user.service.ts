@@ -19,7 +19,7 @@ export class UserService {
       username: username,
       password: password
     }
-    return this.http.post("http://localhost:5000/api/users/signup", register);
+    return this.http.post("http://localhost:5001/api/users/signup", register);
 
   }
 //Login Function
@@ -28,7 +28,7 @@ export class UserService {
       email: email,
       password: password
     }
-    return this.http.post("http://localhost:5000/api/users/login", login)
+    return this.http.post("http://localhost:5001/api/users/login", login)
   }
 
 }
