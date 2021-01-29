@@ -21,16 +21,16 @@ export class RegisterComponent implements OnInit {
     console.log("Login Successful");
     console.log(this.registerForm);
     this.myUserService.signUp(this.registerForm.firstName, this.registerForm.lasrname, this.registerForm.email, this.registerForm.username, this.registerForm.password)
-    .subscribe(response =>{
-      console.log(response)
-      this.registerForm = {
-        firstName: "",
-        lasrname: "",
-        email: "",
-        username: "",
-        password: "",
-      }
-    })
+      .subscribe(response => {
+        console.log(response)
+        this.registerForm = {
+          firstName: "",
+          lasrname: "",
+          email: "",
+          username: "",
+          password: "",
+        }
+      })
   }
 
   Roles: any = ['Admin', 'Author', 'Reader'];
