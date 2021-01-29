@@ -3,5 +3,5 @@ export class Register {
   lastName: string;
   email: string;
   username: string;
-  pasword: string;
+  password: string;
 };
