@@ -1,193 +1,303 @@
-  <!DOCTYPE html>
-  <html>
-  <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
-  <style>
-  .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: 25px;
-    text-align: center;
-    font-family: arial;
-    float: left
-  }
-  
-  .title {
-    color: grey;
-    font-size: 18px;
-  }
-  
-  button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-  }
-  
-  a {
-    text-decoration: none;
-    font-size: 22px;
-    color: black;
-  }
-  
-  button:hover, a:hover {
-    opacity: 0.7;
-  }
-  </style>
-  </head>
-  <body>
-  
-  <!-- <h2 style="text-align:left">My Spotlight</h2> -->
-  <div class="card">
-    <img src="assets/images/user1.jpg" alt="Jackson" style="width:100%">
-    <h1>Jackson Jones</h1>
-    <p class="title">I'm looking to connect and create with talented songwiriters!</p>
-    <p>San Diego, Ca</p>
-    <div style="margin: 24px 0;">
-      <a href="#"><i class="fa fa-twitter"></i></a>
-      <a href="#"><i class="fa fa-linkedin"></i></a>
-      <a href="#"><i class="fa fa-instagram"></i></a>
-      <!-- <a href="#"><i class="fa fa-facebook"></i></a> -->
-    </div>
-    <p><button>Message Me!</button></p>
-  </div>
-  <br>
- 
-  <iframe width="420" height="315"
-  src="https://www.youtube.com/embed/p-uGsUu_olM">
-  </iframe>
+<!DOCTYPE html>
+<html>
+<title>Final Project</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
+</style>
+<body class="w3-theme-l5">
 
-  <p>Place holder image (hover)...</p>
-  <img src="assets/images/mic.jpg" alt="shake" width="300" height="300">
-
-<br>
-<br>
-<br>
-<br>
-
-  <mat-card class="example-card">
-    <mat-card-header>
-      <mat-card-title>About Me</mat-card-title>
-      <mat-card-subtitle>Singer/Songwriter</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <p>
-        I live in the San Diego area and I've been playing guitar for 6 years.
-        I am open to building a band as I take music very serious. I teach piano
-        lesson on the side each week as well.
-      </p>
-    </mat-card-content>
-  </mat-card>
-
-  </body>
-  </html>
-
-  <!DOCTYPE html>
-  <html>
-  <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-  img:hover {
-    animation: shake 0.5s;
-    animation-iteration-count: infinite;
-  }
-  
-  @keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
-  }
-  </style>
-  </head>
-  <body>
-  </body>
-  </html>
-
-  <!DOCTYPE html>
-  <html>
-  <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  .flip-card {
-    background-color: transparent;
-    width: 300px;
-    height: 300px;
-    perspective: 1000px;
-  }
-  
-  .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  }
-  
-  .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-  }
-  
-  .flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-  
-  .flip-card-front {
-    background-color: #bbb;
-    color: black;
-  }
-  
-  .flip-card-back {
-    background-color: #2980b9;
-    color: white;
-    transform: rotateY(180deg);
-  }
-  </style>
-  </head>
-  <body>
- 
-<h1>My Music Interests:</h1>
-<h3>Hover over image...</h3> 
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <img src="assets/images/mic.jpg" alt="Avatar" style="width:300px;height:300px;">
-      </div>
-      <div class="flip-card-back">
-        <h1>That's My Jam</h1> 
-        <p>Skillet, Alice Cooper, P.O.D., Petra, Stryper</p> 
-        <p>Bon Jovi, John Denver, Mat Kearney, Tom Petty</p>
-        <br>
-        <h1>My Favorite Genres</h1>
-        <p>Alternative, Acoustic, NuMetal, HipHop, Jazz</p>
-      </div>
+<!-- Navbar -->
+<!-- <div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>OpenMic</a>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="News"><i class="fa fa-globe"></i></a>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Account Settings"><i class="fa fa-user"></i></a>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope"></i></a>
+  <div class="w3-dropdown-hover w3-hide-small">
+    <button class="w3-button w3-padding-large" title="Notifications"><i class="fa fa-bell"></i><span class="w3-badge w3-right w3-small w3-green">3</span></button>     
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
+      <a href="#" class="w3-bar-item w3-button">New connection request</a>
+      <a href="#" class="w3-bar-item w3-button">Josiah posted on your wall</a>
+      <a href="#" class="w3-bar-item w3-button">Palmer likes your post</a>
     </div>
   </div>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
+    <img src="assets/images/mic.jpg" class="w3-circle" style="height:53px;width:53px" alt="Avatar">
+  </a>
+ </div>
+</div> -->
+
+<!-- Navbar on small screens -->
+<div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
+</div>
+
+<!-- Page Container -->
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
+  <!-- The Grid -->
+  <div class="w3-row">
+    <!-- Left Column -->
+    <div class="w3-col m3">
+      <!-- Profile -->
+      <div class="w3-card w3-round w3-white">
+        <div class="w3-container">
+         <h1 class="w3-center">Jackson Jones</h1>
+         <p class="w3-center"><img src="assets/images/user1.jpg" alt="Jackson" class="w3-circle" style="height:206px;width:206px" alt="Avatar"></p>
+         <hr>
+         <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Guitar, Vocals, Piano</p>
+         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> San Diego, CA</p>
+         <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p>
+        </div>
+      </div>
+      <br>
+      
+      <!-- Accordion -->
+      <div class="w3-card w3-round">
+        <div class="w3-white">
+          <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> Groupies</button>
+          <div id="Demo1" class="w3-hide w3-container">
+            <p>Some text..</p>
+          </div>
+          <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> Events</button>
+          <div id="Demo2" class="w3-hide w3-container">
+            <p>Some other text..</p>
+          </div>
+          <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> Collaborate</button>
+          <div id="Demo3" class="w3-hide w3-container">
+         <div class="w3-row-padding">
+         <br>
+           <div class="w3-half">
+             <img src="/w3images/lights.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="/w3images/mountains.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="/w3images/forest.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="/w3images/snow.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+         </div>
+          </div>
+        </div>      
+      </div>
+      <br>
+      
+      <!-- Interests --> 
+      <div class="w3-card w3-round w3-white w3-hide-small">
+        <div class="w3-container">
+          <p>My Genres</p>
+          <p>
+            <span class="w3-tag w3-small w3-theme-d5">Rock</span>
+            <span class="w3-tag w3-small w3-theme-d4">Indie</span>
+            <span class="w3-tag w3-small w3-theme-d3">Jazz</span>
+            <span class="w3-tag w3-small w3-theme-d2">NuMetal</span>
+            <span class="w3-tag w3-small w3-theme-d1">Blues</span>
+            <span class="w3-tag w3-small w3-theme">Reggae</span>
+            <span class="w3-tag w3-small w3-theme-l1">Gospel</span>
+            <span class="w3-tag w3-small w3-theme-l2">Worship</span>
+            <span class="w3-tag w3-small w3-theme-l3">Hip-Hop</span>
+          </p>
+        </div>
+      </div>
+      <br>
+
+      <div class="w3-card w3-round w3-white w3-hide-small">
+        <div class="w3-container">
+          <p>My Jams</p>
+          <p>
+            <span class="w3-tag w3-small w3-theme-d5">P.O.D.</span>
+            <span class="w3-tag w3-small w3-theme-d4">Fight the Fury</span>
+            <span class="w3-tag w3-small w3-theme-d3">dcTalk</span>
+            <span class="w3-tag w3-small w3-theme-d2">NF</span>
+            <span class="w3-tag w3-small w3-theme-d1">21 Pilots</span>
+            <span class="w3-tag w3-small w3-theme">Needtobreathe</span>
+            <span class="w3-tag w3-small w3-theme-l1">Mat Kearney</span>
+            <span class="w3-tag w3-small w3-theme-l2">Ben Rector</span>
+            <span class="w3-tag w3-small w3-theme-l3">Skillet</span>
+            <span class="w3-tag w3-small w3-theme-l3">Stryper</span>
+            <span class="w3-tag w3-small w3-theme-l3">Hillsong</span>
+            <span class="w3-tag w3-small w3-theme-l3">Sevin</span>
+            <span class="w3-tag w3-small w3-theme-l3">Brenden McPeek</span>
+            <span class="w3-tag w3-small w3-theme-l3">Black Narnia</span>
+            <span class="w3-tag w3-small w3-theme-l3">Bizzle</span>
+            <span class="w3-tag w3-small w3-theme-l3">Jimmy Needham</span>
+            <span class="w3-tag w3-small w3-theme-l3">Jon Gibson</span>
+          </p>
+        </div>
+      </div>
+      <br>
+
+      
+      <!-- Alert Box -->
+      <!-- <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
+        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright">
+          <i class="fa fa-remove"></i>
+        </span>
+        <p><strong>Hey!</strong></p>
+        <p>People are looking at your profile. Find out who.</p>
+      </div> -->
+    
+    <!-- End Left Column -->
+    </div>
+    
+    <!-- Middle Column -->
+    <div class="w3-col m7">
+    
+      <div class="w3-row-padding">
+        <div class="w3-col m12">
+          <div class="w3-card w3-round w3-white">
+            <div class="w3-container w3-padding">
+              <!-- <h6 class="w3-opacity">Social Media template by w3.css</h6> -->
+              <p contenteditable="true" class="w3-border w3-padding">Status: Ready to rock!</p>
+              <button type="button" class="w3-button w3-theme"><i class="fa fa-pencil"></i>  Post</button> 
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+        <img src="assets/images/Sanchez.jpeg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+        <span class="w3-right w3-opacity">1min</span>
+        <h4>Josiah S.</h4><br>
+        <hr class="w3-clear">
+        <p>I saw you using this mic. What are your thoughts on it? I'm looking into buying one soon.</p>
+          <div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-half">
+              <img src="assets/images/mic.jpg" style="width:50%" alt="Northern Lights" class="w3-margin-bottom">
+            </div>
+        </div>
+        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
+        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
+      </div>
+      
+      <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+        <img src="assets/images/Williams.jpeg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:90px">
+        <span class="w3-right w3-opacity">16min</span>
+        <h4>Palmer W.</h4><br>
+        <hr class="w3-clear">
+        <p>It was good to see you at the show last night. I'll be at the next open mic in March. Let me know if you want to meet up between now and then.</p>
+        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
+        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
+      </div>  
+
+      <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+        <img src="assets/images/IMG_8511.JPG" alt="David" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+        <span class="w3-right w3-opacity">3hrs</span>
+        <h4>David N.</h4><br>
+        <hr class="w3-clear">
+        <p>Your music is awesome! Can't wait for the new album</p>
+        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
+        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
+      </div> 
+      
+    <!-- End Middle Column -->
+    </div>
+    
+    <!-- Right Column -->
+    <div class="w3-col m2">
+      <div class="w3-card w3-round w3-white w3-center">
+        <div class="w3-container">
+          <p>Upcoming Events:</p>
+          <img src="assets/images/coffeeshop.jpeg" alt="Forest" style="width:100%;">
+          <p><strong>Coffee Shop Open Mic</strong></p>
+          <p>Friday @ 5:00pm</p>
+          <p><button class="w3-button w3-block w3-theme-l4">Info</button></p>
+        </div>
+      </div>
+      <br>
+      
+      <iframe width="210" height="200"
+      src="https://www.youtube.com/embed/p-uGsUu_olM">
+      </iframe>
+      <br>
+
+      <div class="w3-card w3-round w3-white w3-center">
+        <div class="w3-container">
+          <p>Friend Request</p>
+          <img src="assets/images/girl.jpg" alt="Avatar" style="width:80%"><br>
+          <span>Jane Doe</span>
+          <div class="w3-row w3-opacity">
+            <div class="w3-half">
+              <button class="w3-button w3-block w3-green w3-section" title="Accept"><i class="fa fa-check"></i></button>
+            </div>
+            <div class="w3-half">
+              <button class="w3-button w3-block w3-red w3-section" title="Decline"><i class="fa fa-remove"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      
+      <!-- <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
+        <p>ADS</p>
+      </div>
+      <br> -->
+
+    <!-- <div class="w3-card w3-round w3-white w3-padding-32 w3-center">
+    <p><i class="fa fa-bug w3-xxlarge"></i></p>
+    </div> -->
+      
+    <!-- End Right Column -->
+    </div>
+    
+  <!-- End Grid -->
+  </div>
   
-  </body>
-  </html>
-  
+<!-- End Page Container -->
+</div>
+<br>
+
+<!-- Footer -->
+<!-- <footer class="w3-container w3-theme-d3 w3-padding-16">
+  <h5>Footer</h5>
+</footer> -->
+
+<!-- <footer class="w3-container w3-theme-d5">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">God</a></p>
+</footer> -->
+ 
+<script>
+// Accordion
+function myFunction(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-theme-d1";
+  } else { 
+    x.className = x.className.replace("w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-theme-d1", "");
+  }
+}
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
+</html> 
