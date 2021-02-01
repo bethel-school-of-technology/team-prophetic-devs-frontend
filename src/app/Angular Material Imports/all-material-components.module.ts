@@ -34,6 +34,7 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {ScrollingModule} from '@angular/cdk/scrolling';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -73,7 +74,8 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
     MatSortModule,
     MatPaginatorModule,
     DragDropModule,
-    ScrollingModule
+    ScrollingModule,
+    FlexLayoutModule,
 
   ],
   providers: [],
