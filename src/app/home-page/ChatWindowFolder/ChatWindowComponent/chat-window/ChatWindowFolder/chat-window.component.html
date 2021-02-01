@@ -1,12 +1,12 @@
-<script src="/socket.io/socket.io.js"></script>
 <div class="chatWindowContainer">
   <mat-card class="chatWindow">
     <!--This is the body where the messages will be rendered!!!-->
     <mat-card-content>
-      <div>
+      <div class="messageContainer">
         <ul id="messages"></ul>
       </div>
     </mat-card-content>
+    <mat-divider></mat-divider>
     <!--This is the were the user will enter in the message they want to send!!!-->
     <mat-card-actions>
         <mat-form-field class="form-field" id="form">
