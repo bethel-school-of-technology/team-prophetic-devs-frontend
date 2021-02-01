@@ -1,7 +1,6 @@
+import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { UserLoginService } from 'src/app/services/user-login.service';
-
-
 
 @Component({
   selector: 'app-log-in',
@@ -13,7 +12,6 @@ export class LogInComponent implements OnInit {
     email: "",
     password: "",
   }
-
   logIn() {
     console.log("LogIn form submitted");
     this.myLoginService.logIn(this.loginForm.email,this.loginForm.password)
@@ -25,10 +23,8 @@ export class LogInComponent implements OnInit {
       }
     })
   }
-
   Roles: any = ['Admin', 'Author', 'Reader'];
   constructor(private myLoginService: UserLoginService) { }
-
   ngOnInit(): void {
   }
 
