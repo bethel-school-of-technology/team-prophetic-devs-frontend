@@ -5,7 +5,7 @@
       <mat-card-title>Log in</mat-card-title>
     </mat-card-header>
 
-    <form  (ngSubmit)="onLogIn()" >
+    <form  (ngSubmit)="logIn()" >
       <mat-card-content>
         <mat-form-field class="example-full-width">
           <input matInput [(ngModel)]="loginForm.email" name="email" placeholder="Email" type="email">

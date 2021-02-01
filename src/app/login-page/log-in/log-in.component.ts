@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UserLoginService } from 'src/app/services/user-login.service';
+
+
 
 @Component({
   selector: 'app-log-in',
@@ -6,16 +9,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./log-in.component.css']
 })
 export class LogInComponent implements OnInit {
-  loginForm={
+  loginForm = {
     email: "",
     password: "",
   }
-  onLogIn(){
+
+  logIn() {
     console.log("LogIn form submitted");
-    console.log(this.loginForm);
+    this.myLoginService.logIn(this.loginForm.email,this.loginForm.password)
+    .subscribe(Response =>{
+      console.log(Response)
+      this.loginForm ={
+        email: "",
+        password: ""
+      }
+    })
   }
 
-  constructor() { }
+  Roles: any = ['Admin', 'Author', 'Reader'];
+  constructor(private myLoginService: UserLoginService) { }
 
   ngOnInit(): void {
   }
