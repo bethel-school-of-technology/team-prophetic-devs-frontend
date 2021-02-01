@@ -1,6 +1,6 @@
 import { isNgTemplate } from '@angular/compiler';
 import { Injectable } from '@angular/core';
-import { io } from 'socket.io-client';
+import * as io from 'socket.io-client';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -23,10 +23,8 @@ export class SocketIoService {
 
   setupSocketConnection() {
     this.socket = io(environment.SOCKET_ENDPOINT);
-    this.socket.on('chat message', function (msg) {
-      var item = document.createElement('li');
-      item.textContent = msg;
-      this.messages.appendChild(item);
+    this.socket.on('connect', function (msg) {
+      console.log(msg);
     })
   }
   constructor() { }

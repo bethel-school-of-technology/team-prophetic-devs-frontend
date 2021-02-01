@@ -19,7 +19,9 @@ import { ChatSelectorComponent } from './home-page/chat-selector/chat-selector.c
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HttpClientModule } from "@angular/common/http";
 
-//imports for users
+//Socket.io
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+const config: SocketIoConfig = {url: 'http://localhost:5001', options: {}};
 
 
 
@@ -43,7 +45,8 @@ import { HttpClientModule } from "@angular/common/http";
     AppRoutingModule,
     AllMaterialComponentsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SocketIoModule.forRoot(config)
   ],
   providers: [],
   bootstrap: [AppComponent]

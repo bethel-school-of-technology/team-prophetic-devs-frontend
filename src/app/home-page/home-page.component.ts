@@ -10,10 +10,11 @@ export class HomePageComponent implements OnInit {
 
   constructor(private mySocketIoService: SocketIoService) { }
 
-  //Socket Io Stuff Here
+
 
 
   ngOnInit(): void {
+    this.mySocketIoService.setupSocketConnection();
   }
 
 }
