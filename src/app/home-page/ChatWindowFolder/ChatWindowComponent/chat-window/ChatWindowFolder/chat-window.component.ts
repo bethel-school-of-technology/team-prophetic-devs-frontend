@@ -7,16 +7,22 @@ import { SocketIoService } from 'src/app/services/socket-io.service';
   styleUrls: ['./chat-window.component.css']
 })
 export class ChatWindowComponent implements OnInit {
-  value: string = '';
-  message: string = '';
+  value=""
+
+  messageForm = {
+    message: ''
+  }
 
   onSendMessage(){
-    this.mySocketIoService.sendMessage(this.message)
+    this.mySocketIoService.sendMessage(this.messageForm.message);
+    console.log(this.messageForm);
+    this.messageForm = {
+      message: ''
+    }
   }
 
   constructor(private mySocketIoService: SocketIoService) { }
   ngOnInit(): void {
-    this.mySocketIoService.userConnected();
   }
 
 }

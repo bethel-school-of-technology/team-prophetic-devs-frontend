@@ -10,16 +10,17 @@ export class SocketIoService {
   constructor(private socket: Socket) { }
 
   userConnected(){
-    this.socket.emit('connection');
+    this.socket.emit('message', "user has connected.");
   }
 
   sendMessage(msg: string){
-    this.socket.emit('message', msg);
+    this.socket.emit('chat message', msg);
+    console.log('Message succesfully sent.')
   };
 
   getMessage(){
     return this.socket
       .fromEvent('message')
-      .pipe(map((data) => {data.msg}));
+      .pipe(map((data) => {data}));
   }
 }

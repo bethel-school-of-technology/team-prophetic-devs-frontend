@@ -9,29 +9,32 @@
     <mat-divider></mat-divider>
     <!--This is the were the user will enter in the message they want to send!!!-->
     <mat-card-actions>
-        <mat-form-field class="form-field" id="form">
+        <form (ngSubmit)="onSendMessage()" class="form-field" id="form">
+          <mat-form-field class="form-feild">
           <mat-label>Message...</mat-label>
-          <input id="input" matInput type="text" [(ngModel)]="value" />
+          <input name="message" matInput type="text" [(ngModel)]="messageForm.message" />
           <button
             mat-button
-            *ngIf="value"
+            *ngIf="messageForm.message"
             matSuffix
             mat-icon-button
-            aria-label="Clear"
-            (click)="value = ''"
-          >
-            <mat-icon>close</mat-icon>
-          </button>
-          <button
-            mat-button
-            *ngIf="value"
-            matSuffix
-            mat-icon-button
+            type="submit"
             aria-label="Send"
           >
             <mat-icon>send</mat-icon>
           </button>
+          <button
+            mat-button
+            *ngIf="messageForm.message"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="messageForm.message = ''"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
         </mat-form-field>
+        </form>
     </mat-card-actions>
   </mat-card>
 </div>

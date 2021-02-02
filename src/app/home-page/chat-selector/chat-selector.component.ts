@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SocketIoService } from '../../services/socket-io.service';
 
 @Component({
   selector: 'app-chat-selector',
@@ -8,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class ChatSelectorComponent implements OnInit {
 
   selected = ""
-  constructor() { }
+
+  onUserConnected(){
+    this.mySocketIoService.userConnected();
+}
+
+  constructor(private mySocketIoService: SocketIoService) { }
 
   ngOnInit(): void {
   }
