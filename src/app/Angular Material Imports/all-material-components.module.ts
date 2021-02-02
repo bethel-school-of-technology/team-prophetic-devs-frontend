@@ -32,6 +32,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -69,7 +72,10 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatSnackBarModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    DragDropModule,
+    ScrollingModule,
+    FlexLayoutModule,
 
   ],
   providers: [],

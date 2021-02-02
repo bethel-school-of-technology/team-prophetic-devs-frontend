@@ -15,7 +15,9 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { ChatWindowComponent } from './home-page/ChatWindowFolder/ChatWindowComponent/chat-window/ChatWindowFolder/chat-window.component';
 import { RegisterComponent } from './login-page/register/register.component';
 import { LogInComponent } from './login-page/log-in/log-in.component';
+import { ChatSelectorComponent } from './home-page/chat-selector/chat-selector.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { HttpClientModule } from "@angular/common/http"
 
 //imports for users
 
@@ -32,14 +34,16 @@ import { AboutUsComponent } from './about-us/about-us.component';
     ChatWindowComponent,
     RegisterComponent,
     LogInComponent,
-    AboutUsComponent,
+    ChatSelectorComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     AllMaterialComponentsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

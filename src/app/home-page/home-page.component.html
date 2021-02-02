@@ -1,1 +1,13 @@
-<app-chat-window></app-chat-window>
+<mat-grid-list cols="3" rowHeight="100px">
+  <mat-grid-tile
+  rowspan="4">
+    <app-chat-selector class="chatNav"></app-chat-selector>
+  </mat-grid-tile>
+  <mat-grid-tile
+    colspan="2"
+    rowspan="4">
+    <app-chat-window class="chatWindow"></app-chat-window>
+  </mat-grid-tile>
+</mat-grid-list>
+
+
