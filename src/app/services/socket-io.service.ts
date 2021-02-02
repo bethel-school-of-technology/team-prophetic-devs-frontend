@@ -1,31 +1,25 @@
-import { isNgTemplate } from '@angular/compiler';
 import { Injectable } from '@angular/core';
-import * as io from 'socket.io-client';
-import { environment } from 'src/environments/environment';
+import { Socket }  from 'ngx-socket-io';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SocketIoService {
 
-  socket;
+  constructor(private socket: Socket) { }
 
-  messages = document.getElementById('messages');
-  form = document.getElementById("form");
-  input = document.getElementById("input");
-
-  onSendMessage(){
-    if (this.input.nodeValue) {
-      this.socket.emit('chat message', this.input.nodeValue);
-      this.input.nodeValue = '';
-    }
+  userConnected(){
+    this.socket.emit('connection');
   }
 
-  setupSocketConnection() {
-    this.socket = io(environment.SOCKET_ENDPOINT);
-    this.socket.on('connect', function (msg) {
-      console.log(msg);
-    })
+  sendMessage(msg: string){
+    this.socket.emit('message', msg);
+  };
+
+  getMessage(){
+    return this.socket
+      .fromEvent('message')
+      .pipe(map((data) => {data.msg}));
   }
-  constructor() { }
 }

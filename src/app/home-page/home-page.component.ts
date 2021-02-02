@@ -7,14 +7,8 @@ import { SocketIoService } from '../services/socket-io.service';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-
-  constructor(private mySocketIoService: SocketIoService) { }
-
-
-
-
+  constructor() { }
   ngOnInit(): void {
-    this.mySocketIoService.setupSocketConnection();
   }
 
 }
