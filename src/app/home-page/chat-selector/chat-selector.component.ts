@@ -10,9 +10,10 @@ export class ChatSelectorComponent implements OnInit {
 
   selected = ""
 
-//   onUserConnected(){
-//     this.mySocketIoService.userConnect();
-// }
+  onSendMsg(){
+    this.mySocketIoService.sendMsg();
+    console.log('The BUTTon was touched...')
+}
 
   constructor(private mySocketIoService: SocketIoService) { }
 

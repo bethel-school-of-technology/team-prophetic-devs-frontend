@@ -12,15 +12,20 @@ export class SocketIoService {
   userConnect() {
     console.log('Socket should be connected...')
     return this.socket.connect()
-
   }
 
   sendMessage(msg: string) {
-    this.socket.emit("message", msg);
+    return this.socket.emit("message", msg);
   }
   getMessage() {
     return this.socket
       .fromEvent("message")
       .pipe(map((data) => data/*This throws an error >>> .msg*/));
+  }
+
+  sendMsg() {
+    return this.socket.on('message', ()=>{
+      this.socket.emit("message", "HELLO WORLD");
+    })
   }
 }
