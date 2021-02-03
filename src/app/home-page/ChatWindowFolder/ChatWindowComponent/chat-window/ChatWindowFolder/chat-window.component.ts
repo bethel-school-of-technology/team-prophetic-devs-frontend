@@ -7,26 +7,27 @@ import { SocketIoService } from 'src/app/services/socket-io.service';
   styleUrls: ['./chat-window.component.css']
 })
 export class ChatWindowComponent implements OnInit {
-  value = ""
   item = document.createElement('li');
+  chatRoom = document.getElementById('messages');
   messageForm = {
     message: ''
   }
 
-  onSendMessage() {
-    this.mySocketIoService.sendMessage(this.messageForm.message);
-    console.log(this.messageForm);
-    this.item.textContent = this.messageForm.message;
-    document.getElementById('messages').appendChild(this.item);
-    window.scrollTo(0, document.body.scrollHeight);
+  constructor(private mySocketIoService: SocketIoService) { }
+
+  onSendMsg() {
+    this.mySocketIoService.emit('msg', this.messageForm.message);
     this.messageForm = {
       message: ''
     };
   }
 
-  constructor(private mySocketIoService: SocketIoService) { }
-  ngOnInit(): void {
-    this.mySocketIoService.userConnect();
-  }
 
+  ngOnInit(): void {
+    this.mySocketIoService.listen('msg').subscribe((data) => {
+      this.item.textContent = data; //Don't worry about this error!!!!
+      document.getElementById('messages').appendChild(this.item);
+      window.scrollTo(0, document.body.scrollHeight);
+    })
+  }
 }

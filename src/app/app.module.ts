@@ -19,18 +19,6 @@ import { ChatSelectorComponent } from './home-page/chat-selector/chat-selector.c
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HttpClientModule } from "@angular/common/http";
 
-//Socket.io
-import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
-const config: SocketIoConfig = {url: 'http://localhost:5000', options: {
-
-    path: '/socket.io',
-    origin: "http://localhost:4200",
-    methods: ["GET", "POST"],
-    credentials: true,
-    transports: [ "websocket", "polling" ]
-
-}};
-
 
 
 
@@ -53,8 +41,7 @@ const config: SocketIoConfig = {url: 'http://localhost:5000', options: {
     AppRoutingModule,
     AllMaterialComponentsModule,
     FormsModule,
-    HttpClientModule,
-    SocketIoModule.forRoot(config)
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
