@@ -6,3 +6,9 @@
 .messageContainer{
   height: 475px;
 }
+
+#messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

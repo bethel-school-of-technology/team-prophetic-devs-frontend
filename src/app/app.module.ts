@@ -21,7 +21,15 @@ import { HttpClientModule } from "@angular/common/http";
 
 //Socket.io
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
-const config: SocketIoConfig = {url: 'http://localhost:5001', options: {}};
+const config: SocketIoConfig = {url: 'http://localhost:5000', options: {
+
+    path: '/socket.io',
+    origin: "http://localhost:4200",
+    methods: ["GET", "POST"],
+    credentials: true,
+    transports: [ "websocket", "polling" ]
+
+}};
 
 
 

@@ -10,9 +10,9 @@ export class ChatSelectorComponent implements OnInit {
 
   selected = ""
 
-  onUserConnected(){
-    this.mySocketIoService.userConnected();
-}
+//   onUserConnected(){
+//     this.mySocketIoService.userConnect();
+// }
 
   constructor(private mySocketIoService: SocketIoService) { }
 
