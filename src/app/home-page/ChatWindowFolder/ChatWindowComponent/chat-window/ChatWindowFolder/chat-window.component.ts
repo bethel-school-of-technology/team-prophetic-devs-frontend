@@ -12,6 +12,7 @@ export class ChatWindowComponent implements OnInit {
   messageForm = {
     message: ''
   }
+  chatMessages: any;
 
   constructor(private mySocketIoService: SocketIoService) { }
 
@@ -26,9 +27,10 @@ export class ChatWindowComponent implements OnInit {
   ngOnInit(): void {
     this.mySocketIoService.listen('msg').subscribe((data) => {
       this.item = document.createElement('li');
-      this.item.textContent  = data; //Don't worry about this error!!!!
+      this.item.textContent  = data;
+      this.chatMessages = document.getElementById('messages');
       document.getElementById('messages').appendChild(this.item);
-      window.scrollTo(0, document.body.scrollHeight);
+      this.chatMessages.scrollTop = this.chatMessages.scrollHeight;
     })
   }
 }
