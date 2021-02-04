@@ -9,7 +9,6 @@ import { Register } from '../../models/register';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
   registerForm = {
     firstName: "",
     lastName: "",
@@ -17,6 +16,7 @@ export class RegisterComponent implements OnInit {
     username: "",
     password: "",
   }
+  
   onRegister() {
     console.log("Registered Successfully");
     console.log(this.registerForm);

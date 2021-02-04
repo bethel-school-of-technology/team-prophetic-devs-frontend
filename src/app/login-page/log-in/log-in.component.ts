@@ -12,6 +12,7 @@ export class LogInComponent implements OnInit {
     email: "",
     password: "",
   }
+  
   logIn() {
     console.log("LogIn form submitted");
     this.myLoginService.logIn(this.loginForm.email,this.loginForm.password)

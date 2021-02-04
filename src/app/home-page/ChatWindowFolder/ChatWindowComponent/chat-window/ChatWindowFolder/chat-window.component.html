@@ -1,24 +1,40 @@
 <div class="chatWindowContainer">
-<mat-card class="chatWindow">
-<!--This is the body where the messages will be rendered!!!-->
-  <mat-card-content>
-    <div>
-      <mat-spinner cdkDrag></mat-spinner>
-    </div>
-
-  </mat-card-content>
-<!--This is the were the user will enter in the message they want to send!!!-->
-  <mat-card-actions>
-    <mat-form-field class="form-field">
-      <mat-label>Message...</mat-label>
-      <input matInput type="text" [(ngModel)]="value">
-      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-        <mat-icon>close</mat-icon>
-      </button>
-      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Send">
-        <mat-icon>send</mat-icon>
-      </button>
-    </mat-form-field>
-  </mat-card-actions>
-</mat-card>
+  <mat-card class="chatWindow">
+    <!--This is the body where the messages will be rendered!!!-->
+    <mat-card-content>
+      <div class="messageContainer">
+        <ul id="messages"></ul>
+      </div>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <!--This is the were the user will enter in the message they want to send!!!-->
+    <mat-card-actions>
+        <form (ngSubmit)="onSendMsg()" class="form-field" id="form">
+          <mat-form-field class="form-feild">
+          <mat-label>Message...</mat-label>
+          <input name="message" matInput type="text" [(ngModel)]="messageForm.message" />
+          <button
+            mat-button
+            *ngIf="messageForm.message"
+            matSuffix
+            mat-icon-button
+            type="submit"
+            aria-label="Send"
+          >
+            <mat-icon>send</mat-icon>
+          </button>
+          <button
+            mat-button
+            *ngIf="messageForm.message"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="messageForm.message = ''"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+        </form>
+    </mat-card-actions>
+  </mat-card>
 </div>

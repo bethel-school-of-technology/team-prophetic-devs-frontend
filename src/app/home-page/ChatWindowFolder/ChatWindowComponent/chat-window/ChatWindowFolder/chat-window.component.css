@@ -1,8 +1,14 @@
-.form-field{
+
+.chatWindow, .chatWidowContainer, .form-feild {
   width: 100%;
 }
 
-.chatWindow, .chatWidowContainer {
-  width: 100%;
+.messageContainer{
+  height: 475px;
 }
 
+#messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
