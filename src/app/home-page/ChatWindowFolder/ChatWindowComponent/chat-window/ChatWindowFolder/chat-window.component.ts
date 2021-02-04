@@ -7,7 +7,7 @@ import { SocketIoService } from 'src/app/services/socket-io.service';
   styleUrls: ['./chat-window.component.css']
 })
 export class ChatWindowComponent implements OnInit {
-  item = document.createElement('li');
+  item:any;
   chatRoom = document.getElementById('messages');
   messageForm = {
     message: ''
@@ -25,7 +25,8 @@ export class ChatWindowComponent implements OnInit {
 
   ngOnInit(): void {
     this.mySocketIoService.listen('msg').subscribe((data) => {
-      this.item.textContent = data; //Don't worry about this error!!!!
+      this.item = document.createElement('li');
+      this.item.textContent  = data; //Don't worry about this error!!!!
       document.getElementById('messages').appendChild(this.item);
       window.scrollTo(0, document.body.scrollHeight);
     })
