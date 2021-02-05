@@ -15,22 +15,27 @@ export class RegisterComponent implements OnInit {
     email: "",
     username: "",
     password: "",
+    cityState: "",
+    instruments: "",
+
   }
-  
+
   onRegister() {
     console.log("Registered Successfully");
     console.log(this.registerForm);
-    this.myUserService.signUp(this.registerForm.firstName, this.registerForm.lastName, this.registerForm.email, this.registerForm.username, this.registerForm.password)
-    .subscribe(response =>{
-      console.log(response)
-      this.registerForm = {
-        firstName: "",
-        lastName: "",
-        email: "",
-        username: "",
-        password: "",
-      }
-    })
+    this.myUserService.signUp(this.registerForm.firstName, this.registerForm.lastName, this.registerForm.email, this.registerForm.username, this.registerForm.password, this.registerForm.cityState, this.registerForm.instruments)
+      .subscribe(response => {
+        console.log(response)
+        this.registerForm = {
+          firstName: "",
+          lastName: "",
+          email: "",
+          username: "",
+          password: "",
+          cityState: "",
+          instruments: "",
+        }
+      })
   }
 
   Roles: any = ['Admin', 'Author', 'Reader'];

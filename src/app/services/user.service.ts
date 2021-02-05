@@ -11,13 +11,15 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   //SignUp Function
-  signUp(firstName: string, lastName: string, email: string, username: string, password: string) {
+  signUp(firstName: string, lastName: string, email: string, username: string, password: string, cityState: string, instruments: string) {
     const register: Register = {
       firstName: firstName,
       lastName: lastName,
       email: email,
       username: username,
-      password: password
+      password: password,
+      cityState: cityState,
+      instruments: instruments,
     }
     return this.http.post("http://localhost:5000/api/users/signup", register);
 

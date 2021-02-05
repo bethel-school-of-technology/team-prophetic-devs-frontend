@@ -4,4 +4,6 @@ export class Register {
   email: string;
   username: string;
   password: string;
+  cityState: string;
+  instruments: string;
 };
