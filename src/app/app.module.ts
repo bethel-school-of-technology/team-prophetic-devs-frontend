@@ -17,7 +17,9 @@ import { RegisterComponent } from './login-page/register/register.component';
 import { LogInComponent } from './login-page/log-in/log-in.component';
 import { ChatSelectorComponent } from './home-page/chat-selector/chat-selector.component';
 import { AboutUsComponent } from './about-us/about-us.component';
-import { HttpClientModule } from "@angular/common/http"
+import { HttpClientModule } from "@angular/common/http";
+import { EventDialogComponent } from './event-dialog/event-dialog.component'
+
 
 //imports for users
 
@@ -35,7 +37,8 @@ import { HttpClientModule } from "@angular/common/http"
     RegisterComponent,
     LogInComponent,
     ChatSelectorComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    EventDialogComponent
   ],
   imports: [
     BrowserModule,

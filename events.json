@@ -1,0 +1,31 @@
+{
+    "events": [
+        {
+            "eventTitle": "Event 1",
+            "eventDate": "02/23/21",
+            "eventLocation": "ABC Roast, Someplace, CA",
+            "eventTime": "09:00 PM",
+            "eventCost": "$5",
+            "eventDescription": "Open mic night",
+            "id": 1
+        },
+        {
+            "eventTitle": "Event 2",
+            "eventDate": "02/23/21",
+            "eventLocation": "ABC Roast, Someplace, CA",
+            "eventTime": "09:00 PM",
+            "eventCost": "$5",
+            "eventDescription": "Open mic night",
+            "id": 2
+        },
+        {
+            "eventTitle": "Event 3",
+            "eventDate": "02/23/21",
+            "eventLocation": "ABC Roast, Someplace, CA",
+            "eventTime": "09:00 PM",
+            "eventCost": "$5",
+            "eventDescription": "Open mic night",
+            "id": 3
+        }
+    ]
+}
