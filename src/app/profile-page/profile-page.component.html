@@ -131,10 +131,14 @@
       <div class="w3-card w3-round w3-white w3-center">
         <div class="w3-container">
           <p>Upcoming Events:</p>
-          <img src="assets/images/coffeeshop.jpeg" alt="Forest" style="width:100%;">
-          <p><strong>Coffee Shop Open Mic</strong></p>
-          <p>Friday @ 5:00pm</p>
-          <p><button class="w3-button w3-block w3-theme-l4">Info</button></p>
+          <div *ngFor="let evt of events">
+            <!-- <img src="assets/images/coffeeshop.jpeg" alt="Forest" style="width:100%;"> -->
+            <p><strong>{{evt.eventTitle}}</strong></p>
+            <p>{{evt.eventDate}} @ {{evt.eventTime}}</p>
+            <button class="w3-button w3-block w3-theme-l4" mat-button (click)="getInfo(evt)">Info</button>
+            <!-- <p><button class="w3-button w3-block w3-theme-l4">Info</button></p> -->
+          </div>
+          
         </div>
       </div>
       <!-- <script src="https://apps.elfsight.com/p/platform.js" defer></script> 

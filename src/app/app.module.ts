@@ -19,6 +19,11 @@ import { ChatSelectorComponent } from './home-page/chat-selector/chat-selector.c
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HttpClientModule } from "@angular/common/http";
 
+import { EventDialogComponent } from './event-dialog/event-dialog.component'
+
+
+//imports for users
+
 
 
 
@@ -33,7 +38,8 @@ import { HttpClientModule } from "@angular/common/http";
     RegisterComponent,
     LogInComponent,
     ChatSelectorComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    EventDialogComponent
   ],
   imports: [
     BrowserModule,
