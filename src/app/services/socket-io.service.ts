@@ -20,30 +20,36 @@ export class SocketIoService {
 
   constructor(private http: HttpClient) {
     this.socket = io(this.uri);
+    this.showConfig();
   }
 
-  getUsername() {
-    return this.http.get(this.configUrl);
+  getUsername(): Observable<any> {
+    return this.http.get(this.configUrl, {
+      headers: {
+        authorization: localStorage.getItem('VIP Pass')
+      }
+    });
   }
   showConfig() {
     this.getUsername()
       .pipe()
-      .subscribe((response: any) => this.userName = {
-        username: response.username
+      .subscribe((response: any) => {
+        console.log(response.responseGroupie.username);
+        this.userName = response.responseGroupie.username;
       });
-    console.log(this.userName);
   }
 
   listen(eventName: string) {
     return new Observable((subscriber) => {
       this.socket.on(eventName, (data) => {
+        console.log(data);
         subscriber.next(data)
       })
     });
   }
 
   emit(eventName: string, data: any) {
-    this.socket.emit(eventName, data);
+    this.socket.emit(eventName, (this.userName + ": " + data));
     console.log(data);
   }
 
