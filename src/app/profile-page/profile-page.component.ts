@@ -14,17 +14,17 @@ export class ProfilePageComponent implements OnInit {
   constructor(private myEventService: EventService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.myEventService.getAllEvents().subscribe(res=>{
-      console.log(res)
-      this.events=res;
-    })
-  }
-  getInfo(evt:Event) {
-    this.dialog.open(EventDialogComponent, {
-      data: {
-        event: evt
-      }
-    });
+  //   this.myEventService.getAllEvents().subscribe(res=>{
+  //     console.log(res)
+  //     this.events=res;
+  //   })
+  // }
+  // getInfo(evt:Event) {
+  //   this.dialog.open(EventDialogComponent, {
+  //     data: {
+  //       event: evt
+  //     }
+  //   });
   }
 
 }
