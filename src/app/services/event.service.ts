@@ -9,7 +9,7 @@ export class EventService {
 
   constructor(private http: HttpClient) { }
 
-  // getAllEvents(): Observable<any>{
-  //   return this.http.get("http://localhost:3000/events");
-  // }
+  getAllEvents(): Observable<any>{
+    return this.http.get("http://localhost:3000/events");
+  }
 }
