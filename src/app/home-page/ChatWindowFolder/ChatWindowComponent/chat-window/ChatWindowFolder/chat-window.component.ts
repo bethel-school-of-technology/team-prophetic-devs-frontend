@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { SocketIoService } from 'src/app/services/socket-io.service';
 
 @Component({
@@ -6,7 +7,8 @@ import { SocketIoService } from 'src/app/services/socket-io.service';
   templateUrl: './chat-window.component.html',
   styleUrls: ['./chat-window.component.css']
 })
-export class ChatWindowComponent implements OnInit {
+export class ChatWindowComponent implements OnInit, OnDestroy {
+  mySubscirption:Subscription;
   item:any;
   chatRoom = document.getElementById('messages');
   messageForm = {
@@ -25,7 +27,8 @@ export class ChatWindowComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.mySocketIoService.listen('msg').subscribe((data) => {
+    console.log('Ng init happened');
+    this.mySubscirption = this.mySocketIoService.listen('msg').subscribe((data) => {
       this.item = document.createElement('li');
       this.item.textContent  = data;
       this.chatMessages = document.getElementById('messages');
@@ -33,4 +36,11 @@ export class ChatWindowComponent implements OnInit {
       this.chatMessages.scrollTop = this.chatMessages.scrollHeight;
     })
   }
+
+ngOnDestroy(): void {
+  if(this.mySubscirption){
+    this.mySubscirption.unsubscribe();
+  }
+}
+
 }
