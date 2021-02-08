@@ -6,4 +6,5 @@ export class Register {
   password: string;
   cityState: string;
   instruments: string;
+  genres: string;
 };

@@ -17,13 +17,14 @@ export class RegisterComponent implements OnInit {
     password: "",
     cityState: "",
     instruments: "",
+    genres: "",
 
   }
 
   onRegister() {
     console.log("Registered Successfully");
     console.log(this.registerForm);
-    this.myUserService.signUp(this.registerForm.firstName, this.registerForm.lastName, this.registerForm.email, this.registerForm.username, this.registerForm.password, this.registerForm.cityState, this.registerForm.instruments)
+    this.myUserService.signUp(this.registerForm.firstName, this.registerForm.lastName, this.registerForm.email, this.registerForm.username, this.registerForm.password, this.registerForm.cityState, this.registerForm.instruments, this.registerForm.genres)
       .subscribe(response => {
         console.log(response)
         this.registerForm = {
@@ -34,6 +35,7 @@ export class RegisterComponent implements OnInit {
           password: "",
           cityState: "",
           instruments: "",
+          genres: "",
         }
       })
   }
