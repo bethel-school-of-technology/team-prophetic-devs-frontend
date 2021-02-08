@@ -27,7 +27,6 @@ export class ChatWindowComponent implements OnInit, OnDestroy {
 
 
   ngOnInit(): void {
-    console.log('Ng init happened');
     this.mySubscirption = this.mySocketIoService.listen('msg').subscribe((data) => {
       this.item = document.createElement('li');
       this.item.textContent  = data;

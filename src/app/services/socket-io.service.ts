@@ -42,7 +42,6 @@ export class SocketIoService {
   listen(eventName: string) {
     return new Observable((subscriber) => {
       this.socket.on(eventName, (data) => {
-        console.log(data);
         subscriber.next(data)
       })
     });
