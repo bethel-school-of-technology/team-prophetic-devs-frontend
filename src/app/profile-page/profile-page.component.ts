@@ -3,6 +3,7 @@ import { EventService } from '../services/event.service';
 import { Event } from '../models/event';
 import { MatDialog } from '@angular/material/dialog';
 import { EventDialogComponent } from '../event-dialog/event-dialog.component';
+import { PostService } from '../services/post.service';
 
 @Component({
   selector: 'app-profile-page',
@@ -11,13 +12,35 @@ import { EventDialogComponent } from '../event-dialog/event-dialog.component';
 })
 export class ProfilePageComponent implements OnInit {
   events: Event[] = []
-  constructor(private myEventService: EventService, public dialog: MatDialog) { }
+  userEmail = this.myPostService.userEmail;
+
+
+  postForm = {
+    title: "",
+    postBody: ""
+  }
+
+  onPost(){
+    console.log("Post Submitted");
+    console.log(this.postForm);
+    this.myPostService.creatPost(this.postForm.title, this.postForm.postBody)
+      .subscribe(res => {
+        console.log(res)
+        this.postForm = {
+          title: "",
+          postBody: ""
+        }
+      })
+  }
+
+
+  constructor(private myEventService: EventService, public dialog: MatDialog, public myPostService: PostService) { }
 
   ngOnInit(): void {
     this.myEventService.getAllEvents().subscribe(res=>{
       console.log(res)
       this.events=res;
-    })
+    });
   }
   getInfo(evt:Event) {
     this.dialog.open(EventDialogComponent, {
