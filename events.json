@@ -1,7 +1,7 @@
 {
     "events": [
         {
-            "eventTitle": "Event 1",
+            "eventTitle": "Open Mic @ Hebrews Coffee House",
             "eventDate": "02/23/21",
             "eventLocation": "ABC Roast, Someplace, CA",
             "eventTime": "09:00 PM",
@@ -10,19 +10,19 @@
             "id": 1
         },
         {
-            "eventTitle": "Event 2",
-            "eventDate": "02/23/21",
+            "eventTitle": "Solo Event @ Holy Grounds",
+            "eventDate": "03/14/21",
             "eventLocation": "ABC Roast, Someplace, CA",
-            "eventTime": "09:00 PM",
+            "eventTime": "08:30 PM",
             "eventCost": "$5",
             "eventDescription": "Open mic night",
             "id": 2
         },
         {
-            "eventTitle": "Event 3",
-            "eventDate": "02/23/21",
+            "eventTitle": "Acoustic set @ Bean Redeemed",
+            "eventDate": "05/7/21",
             "eventLocation": "ABC Roast, Someplace, CA",
-            "eventTime": "09:00 PM",
+            "eventTime": "07:15 PM",
             "eventCost": "$5",
             "eventDescription": "Open mic night",
             "id": 3
