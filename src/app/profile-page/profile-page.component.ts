@@ -4,6 +4,8 @@ import { Event } from '../models/event';
 import { MatDialog } from '@angular/material/dialog';
 import { EventDialogComponent } from '../event-dialog/event-dialog.component';
 import { PostService } from '../services/post.service';
+import { Post } from '../models/post';
+import { SocketIoService } from '../services/socket-io.service';
 
 @Component({
   selector: 'app-profile-page',
@@ -12,8 +14,7 @@ import { PostService } from '../services/post.service';
 })
 export class ProfilePageComponent implements OnInit {
   events: Event[] = []
-  userEmail = this.myPostService.userEmail;
-
+  posts: Post[] = []
 
   postForm = {
     title: "",
@@ -34,14 +35,21 @@ export class ProfilePageComponent implements OnInit {
   }
 
 
-  constructor(private myEventService: EventService, public dialog: MatDialog, public myPostService: PostService) { }
+  constructor(private myEventService: EventService, public dialog: MatDialog, public myPostService: PostService, private mySocketIoService: SocketIoService) { }
 
   ngOnInit(): void {
     this.myEventService.getAllEvents().subscribe(res=>{
       console.log(res)
       this.events=res;
     });
+
+    this.myPostService.getAllPosts().subscribe(res => {
+      console.log(res);
+    })
   }
+
+
+
   getInfo(evt:Event) {
     this.dialog.open(EventDialogComponent, {
       data: {
@@ -49,6 +57,5 @@ export class ProfilePageComponent implements OnInit {
       }
     });
   }
-
 }
 

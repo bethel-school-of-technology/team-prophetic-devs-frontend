@@ -105,8 +105,8 @@
           <div class="w3-card w3-round w3-white">
             <div class="w3-container w3-padding">
               <form (ngSubmit)="onPost()">
-                <input [(ngModel)]="postForm.title" name="title" type="text" contenteditable="true" placeholder="Post Title" class="w3-border w3-padding"/>
-                <input [(ngModel)]="postForm.postBody" name="postBody" type="text" contenteditable="true" placeholder="Post Body" class="w3-border w3-padding"/>
+                <input [(ngModel)]="postForm.title" matInput name="title" type="text" contenteditable="true" placeholder="Post Title" class="w3-border w3-padding" required/>
+                <input [(ngModel)]="postForm.postBody" matInput name="postBody" type="text" contenteditable="true" placeholder="Post Body" class="w3-border w3-padding" required/>
                 <button type="submit" class="w3-button w3-theme">
                   <i class="fa fa-pencil"></i>  Post
                 </button>
