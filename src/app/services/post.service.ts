@@ -22,10 +22,12 @@ export class PostService {
     })
   }
 
-  creatPost(title: string, postBody: string){
+  creatPost(title: string, postBody: string, name: string, email: string){
     const post: Post = {
       title: title,
       postBody: postBody,
+      name: name,
+      email: email
     }
     return this.http.post(`${this.configUrl}createPost`, post, {
       headers: {

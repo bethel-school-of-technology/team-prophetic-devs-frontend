@@ -18,18 +18,22 @@ export class ProfilePageComponent implements OnInit {
 
   postForm = {
     title: "",
-    postBody: ""
+    postBody: "",
+    name: "",
+    email:""
   }
 
   onPost(){
     console.log("Post Submitted");
     console.log(this.postForm);
-    this.myPostService.creatPost(this.postForm.title, this.postForm.postBody)
+    this.myPostService.creatPost(this.postForm.title, this.postForm.postBody, this.postForm.name, this.postForm.email)
       .subscribe(res => {
         console.log(res)
         this.postForm = {
           title: "",
-          postBody: ""
+          postBody: "",
+          name:"",
+          email:""
         }
       })
   }
@@ -44,7 +48,8 @@ export class ProfilePageComponent implements OnInit {
     });
 
     this.myPostService.getAllPosts().subscribe(res => {
-      console.log(res);
+      console.log(res)
+      this.posts=res;
     })
   }
 

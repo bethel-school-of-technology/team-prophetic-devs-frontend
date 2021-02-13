@@ -12,7 +12,7 @@
 <!-- Page Container -->
 <div
   class="w3-container w3-content"
-  style="max-width: 1400px; margin-top: 80px"
+  style="max-width: 1400px; margin-top: 20px"
 >
   <!-- The Grid -->
   <div class="w3-row">
@@ -103,11 +103,30 @@
       <div class="w3-row-padding">
         <div class="w3-col m12">
           <div class="w3-card w3-round w3-white">
-            <div class="w3-container w3-padding">
-              <form (ngSubmit)="onPost()">
-                <input [(ngModel)]="postForm.title" matInput name="title" type="text" contenteditable="true" placeholder="Post Title" class="w3-border w3-padding" required/>
-                <input [(ngModel)]="postForm.postBody" matInput name="postBody" type="text" contenteditable="true" placeholder="Post Body" class="w3-border w3-padding" required/>
-                <button type="submit" class="w3-button w3-theme">
+            <div class="w3-container w3-padding postCreation">
+              <h2 class="postCreationHeader">Something on your mind?</h2>
+              <form (ngSubmit)="onPost()" class="postCreation">
+                <input
+                  [(ngModel)]="postForm.title"
+                  matInput
+                  name="title"
+                  type="text"
+                  contenteditable="true"
+                  placeholder="Post Title"
+                  class="w3-border w3-padding inputs"
+                  required
+                />
+                <input
+                  [(ngModel)]="postForm.postBody"
+                  matInput
+                  name="postBody"
+                  type="text"
+                  contenteditable="true"
+                  placeholder="Post Body"
+                  class="w3-border w3-padding inputs"
+                  required
+                />
+                <button type="submit" class="w3-button w3-theme postSubmit">
                   <i class="fa fa-pencil"></i>  Post
                 </button>
               </form>
@@ -115,42 +134,25 @@
           </div>
         </div>
       </div>
-
-      <div class="w3-container w3-card w3-white w3-round w3-margin">
-        <br />
-        <img
-          src="assets/images/Sanchez.jpeg"
-          alt="Avatar"
-          class="w3-left w3-circle w3-margin-right"
-          style="width: 60px"
-        />
-        <span class="w3-right w3-opacity">1min</span>
-        <h4>Josiah S.</h4>
-        <br />
-        <hr class="w3-clear" />
-        <p>
-          I saw you using this mic. What are your thoughts on it? I'm looking
-          into buying one soon.
-        </p>
-        <div class="w3-row-padding" style="margin: 0 -16px">
-          <div class="w3-half">
-            <img
-              src="assets/images/mic.jpg"
-              style="width: 50%"
-              alt="Northern Lights"
-              class="w3-margin-bottom"
-            />
-          </div>
+      <div class="postScroll">
+        <div
+          *ngFor="let post of posts"
+          class="w3-container w3-card w3-white w3-round w3-margin"
+        >
+          <br />
+          <h2 class="postUserName">{{ post.name }}</h2>
+          <h3>{{ post.title }}</h3>
+          <hr class="w3-clear" />
+          <p>
+            {{ post.postBody }}
+          </p>
+          <div class="w3-row-padding" style="margin: 0 -16px"></div>
+          <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom likeButton">
+            <i class="fa fa-thumbs-up"></i>  Rock On!
+          </button>
         </div>
-        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom">
-          <i class="fa fa-thumbs-up"></i>  Rock On!
-        </button>
-        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom">
-          <i class="fa fa-comment"></i>  Reply
-        </button>
       </div>
-
-      <div class="w3-container w3-card w3-white w3-round w3-margin">
+      <!-- <div class="w3-container w3-card w3-white w3-round w3-margin">
         <br />
         <img
           src="assets/images/Williams.jpeg"
@@ -195,7 +197,7 @@
         <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom">
           <i class="fa fa-comment"></i>  Reply
         </button>
-      </div>
+      </div> -->
 
       <!-- End Middle Column -->
     </div>
