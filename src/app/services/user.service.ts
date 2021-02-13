@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Login } from '../models/login';
 import { Register } from '../models/register';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -33,5 +34,15 @@ export class UserService {
     }
     return this.http.post("http://localhost:5000/api/users/login", login)
   }
+//Function to make a server request to /api/users/profile route
+//type of request: GET
+//need to provide an Authorization header w/the token from login
+//not a component
+getUserProfile(): Observable<any>{
+  let myHeaders = {
+    Authorization: localStorage.getItem("VIP Pass")
+  }
+  return this.http.get("http://localhost:5000/api/users/profile", {headers: myHeaders});
+}
 
 }

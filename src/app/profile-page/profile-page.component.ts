@@ -3,6 +3,7 @@ import { EventService } from '../services/event.service';
 import { Event } from '../models/event';
 import { MatDialog } from '@angular/material/dialog';
 import { EventDialogComponent } from '../event-dialog/event-dialog.component';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-profile-page',
@@ -11,15 +12,28 @@ import { EventDialogComponent } from '../event-dialog/event-dialog.component';
 })
 export class ProfilePageComponent implements OnInit {
   events: Event[] = []
-  constructor(private myEventService: EventService, public dialog: MatDialog) { }
+  currentUser: any
+  constructor(private myEventService: EventService, public dialog: MatDialog, private myUserService: UserService) { }
 
   ngOnInit(): void {
-    this.myEventService.getAllEvents().subscribe(res=>{
+    this.myEventService.getAllEvents().subscribe(res => {
       console.log(res)
-      this.events=res;
+      this.events = res;
     })
+    this.myUserService.getUserProfile().subscribe((myResponseObject:any) => {
+      console.log(myResponseObject.responseGroupie.firstName);
+      this.currentUser = {
+        firstName: myResponseObject.responseGroupie.firstName,
+        lastName: myResponseObject.responseGroupie.lastName,
+        instruments: myResponseObject.responseGroupie.instruments,
+        genres: myResponseObject.responseGroupie.genres,
+        cityState: myResponseObject.responseGroupie.cityState,
+      }
+      //myResponseObject.responseGroupie;
+    })
+    console.log(this.currentUser);
   }
-  getInfo(evt:Event) {
+  getInfo(evt: Event) {
     this.dialog.open(EventDialogComponent, {
       data: {
         event: evt
@@ -29,3 +43,6 @@ export class ProfilePageComponent implements OnInit {
 
 }
 
+//line 13 under events//
+// currentUser: User = new User ();
+// constructor(private myUserService: UserService) { }
