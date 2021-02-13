@@ -1,7 +1,7 @@
 <div class="chatWindowContainer">
   <mat-card class="chatWindow">
     <!--This is the body where the messages will be rendered!!!-->
-    <mat-card-content>
+    <mat-card-content >
       <div class="messageContainer">
         <ul id="messages"></ul>
         <div class="anchor"></div>
@@ -9,9 +9,9 @@
     </mat-card-content>
     <mat-divider></mat-divider>
     <!--This is the were the user will enter in the message they want to send!!!-->
-    <mat-card-actions>
-        <form (ngSubmit)="onSendMsg()" class="form-field" id="form">
-          <mat-form-field class="form-feild">
+    <mat-card-actions >
+        <form  (ngSubmit)="onSendMsg()" class="form-field" id="form">
+          <mat-form-field class="form-feild" class="window">
           <mat-label>Message...</mat-label>
           <input name="message" matInput type="text" [(ngModel)]="messageForm.message" />
           <button

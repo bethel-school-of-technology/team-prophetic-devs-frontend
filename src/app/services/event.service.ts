@@ -9,6 +9,25 @@ export class EventService {
 
   constructor(private http: HttpClient) { }
 
+  user:{};
+
+  profileInfo(): Observable<any>{
+    return this.http.get("http://localhost:5000/api/users/profile", {
+      headers: {
+        authorization: localStorage.getItem('VIP Pass')
+      }
+    });
+  }
+
+  getProfileInfo(): any {
+    this.getProfileInfo()
+    .pipe()
+    .subscribe((response:any)=>{
+      this.user = response.responseGroupie
+      console.log(this.user);
+    })
+  }
+
   getAllEvents(): Observable<any>{
     return this.http.get("http://localhost:3000/events");
   }

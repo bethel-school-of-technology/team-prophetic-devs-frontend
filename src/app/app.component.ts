@@ -14,7 +14,6 @@ export class AppComponent {
   ngOnInit(): void {
     //Here we are wanting to listen to an event from socket.io server
     this.mySocketIoService.listen('test event').subscribe((data) => {
-      console.log(data);
     })
   }
 }

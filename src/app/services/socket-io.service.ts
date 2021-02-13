@@ -50,7 +50,6 @@ export class SocketIoService {
 
   emit(eventName: string, data: any) {
     this.socket.emit(eventName, (this.userName + ": " + data));
-    console.log(data);
   }
 
 }

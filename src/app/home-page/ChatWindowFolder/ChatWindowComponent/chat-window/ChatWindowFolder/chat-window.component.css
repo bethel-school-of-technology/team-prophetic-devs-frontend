@@ -1,10 +1,24 @@
 
 .chatWindow, .chatWidowContainer, .form-feild {
   width: 100%;
+  background-color: powderblue;
+}
+
+.window{
+  background-color: white;
+  padding: .5rem;
+  width: 100%;
+  border-radius: 5px;
 }
 
 .messageContainer{
   height: 475px;
+}
+
+.messageContainer {
+  background-color:powderblue;
+  background-size: 100%;
+  padding: 1em;
 }
 
 #messages {

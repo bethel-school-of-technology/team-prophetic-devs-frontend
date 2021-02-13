@@ -1,0 +1,38 @@
+.postCreation {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.postScroll {
+  margin: 5px;
+  padding: 0;
+  overflow: scroll;
+  overflow-x: hidden;
+  max-height: 493px;
+}
+
+.inputs{
+  width:100%;
+  border-radius: 5px;
+}
+
+.likeButton{
+  border-radius: 5px;
+}
+
+.postSubmit{
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+.postCreationHeader{
+  padding: 20px;
+  border-radius: 50%;
+  background: linear-gradient(
+    to right bottom,
+    rgba(63, 15, 165, 0.9),
+    rgba(79, 49, 132, 0.1)
+  );
+}
