@@ -1,6 +1,8 @@
-
 <!-- Navbar on small screens -->
-<div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
+<div
+  id="navDemo"
+  class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large"
+>
   <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
   <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
   <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
@@ -8,7 +10,10 @@
 </div>
 
 <!-- Page Container -->
-<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
+<div
+  class="w3-container w3-content"
+  style="max-width: 1400px; margin-top: 20px"
+>
   <!-- The Grid -->
   <div class="w3-row">
     <!-- Left Column -->
@@ -35,9 +40,9 @@
          <!-- <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p> -->
         </div>
       </div>
-      <br>
-      
-      <!-- Interests --> 
+      <br />
+
+      <!-- Interests -->
       <div class="w3-card w3-round w3-white w3-hide-small">
         <div class="w3-container">
           <p>My Favorite Genres</p>
@@ -55,7 +60,7 @@
           </p>
         </div>
       </div>
-      <br>
+      <br />
 
       <!-- <div class="w3-card w3-round w3-white w3-hide-small">
         <div class="w3-container">
@@ -80,63 +85,122 @@
             <span class="w3-tag w3-small w3-theme-l3">Jon Gibson</span>
           </p>
         </div>
+<<<<<<< HEAD
       </div> -->
     
     <!-- End Left Column -->
+=======
+      </div>
+      <br />
+
+      <!-- End Left Column -->
+>>>>>>> eb7a7b3336b18811aeead06745836ebf0a12b144
     </div>
-    
+
     <!-- Middle Column -->
     <div class="w3-col m7">
-    
       <div class="w3-row-padding">
         <div class="w3-col m12">
           <div class="w3-card w3-round w3-white">
-            <div class="w3-container w3-padding">
-              <p contenteditable="true" class="w3-border w3-padding">Status: Ready to rock!</p>
-              <button type="button" class="w3-button w3-theme"><i class="fa fa-pencil"></i>  Post</button> 
+            <div class="w3-container w3-padding postCreation">
+              <h2 class="postCreationHeader">Something on your mind?</h2>
+              <form (ngSubmit)="onPost()" class="postCreation">
+                <input
+                  [(ngModel)]="postForm.title"
+                  matInput
+                  name="title"
+                  type="text"
+                  contenteditable="true"
+                  placeholder="Post Title"
+                  class="w3-border w3-padding inputs"
+                  required
+                />
+                <input
+                  [(ngModel)]="postForm.postBody"
+                  matInput
+                  name="postBody"
+                  type="text"
+                  contenteditable="true"
+                  placeholder="Post Body"
+                  class="w3-border w3-padding inputs"
+                  required
+                />
+                <button type="submit" class="w3-button w3-theme postSubmit">
+                  <i class="fa fa-pencil"></i>  Post
+                </button>
+              </form>
             </div>
           </div>
         </div>
       </div>
-      
-      <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-        <img src="assets/images/Sanchez.jpeg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
-        <span class="w3-right w3-opacity">1min</span>
-        <h4>Josiah S.</h4><br>
-        <hr class="w3-clear">
-        <p>I saw you using this mic. What are your thoughts on it? I'm looking into buying one soon.</p>
-          <div class="w3-row-padding" style="margin:0 -16px">
-            <div class="w3-half">
-              <img src="assets/images/mic.jpg" style="width:50%" alt="Northern Lights" class="w3-margin-bottom">
-            </div>
+      <div class="postScroll">
+        <div
+          *ngFor="let post of posts"
+          class="w3-container w3-card w3-white w3-round w3-margin"
+        >
+          <br />
+          <h2 class="postUserName">{{ post.name }}</h2>
+          <h3>{{ post.title }}</h3>
+          <hr class="w3-clear" />
+          <p>
+            {{ post.postBody }}
+          </p>
+          <div class="w3-row-padding" style="margin: 0 -16px"></div>
+          <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom likeButton">
+            <i class="fa fa-thumbs-up"></i>  Rock On!
+          </button>
         </div>
-        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Rock On!</button> 
-        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Reply</button> 
       </div>
-      
-      <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-        <img src="assets/images/Williams.jpeg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:90px">
+      <!-- <div class="w3-container w3-card w3-white w3-round w3-margin">
+        <br />
+        <img
+          src="assets/images/Williams.jpeg"
+          alt="Avatar"
+          class="w3-left w3-circle w3-margin-right"
+          style="width: 90px"
+        />
         <span class="w3-right w3-opacity">16min</span>
-        <h4>Palmer W.</h4><br>
-        <hr class="w3-clear">
-        <p>It was good to see you at the show last night. I'll be at the next open mic in March. Let me know if you want to meet up between now and then.</p>
-        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Rock On!</button> 
-        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Reply</button> 
-      </div>  
+        <h4>Palmer W.</h4>
+        <br />
+        <hr class="w3-clear" />
+        <p>
+          It was good to see you at the show last night. I'll be at the next
+          open mic in March. Let me know if you want to meet up between now and
+          then.
+        </p>
+        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom">
+          <i class="fa fa-thumbs-up"></i>  Rock On!
+        </button>
+        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom">
+          <i class="fa fa-comment"></i>  Reply
+        </button>
+      </div>
 
-      <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-        <img src="assets/images/IMG_8511.JPG" alt="David" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+      <div class="w3-container w3-card w3-white w3-round w3-margin">
+        <br />
+        <img
+          src="assets/images/IMG_8511.JPG"
+          alt="David"
+          alt="Avatar"
+          class="w3-left w3-circle w3-margin-right"
+          style="width: 60px"
+        />
         <span class="w3-right w3-opacity">3hrs</span>
-        <h4>David N.</h4><br>
-        <hr class="w3-clear">
+        <h4>David N.</h4>
+        <br />
+        <hr class="w3-clear" />
         <p>Your music is awesome! Can't wait for the new album</p>
-        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Rock On!</button> 
-        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Reply</button> 
-      </div> 
-      
-    <!-- End Middle Column -->
+        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom">
+          <i class="fa fa-thumbs-up"></i>  Rock On!
+        </button>
+        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom">
+          <i class="fa fa-comment"></i>  Reply
+        </button>
+      </div> -->
+
+      <!-- End Middle Column -->
     </div>
-    
+
     <!-- Right Column -->
     <div class="w3-col m2">
       <div class="w3-card w3-round w3-white w3-center">
@@ -144,30 +208,39 @@
           <p>Upcoming Events:</p>
           <div *ngFor="let evt of events">
             <!-- <img src="assets/images/coffeeshop.jpeg" alt="Forest" style="width:100%;"> -->
-            <p><strong>{{evt.eventTitle}}</strong></p>
-            <p>{{evt.eventDate}} @ {{evt.eventTime}}</p>
-            <button class="w3-button w3-block w3-theme-l4" mat-button (click)="getInfo(evt)">Info</button>
+            <p>
+              <strong>{{ evt.eventTitle }}</strong>
+            </p>
+            <p>{{ evt.eventDate }} @ {{ evt.eventTime }}</p>
+            <button
+              class="w3-button w3-block w3-theme-l4"
+              mat-button
+              (click)="getInfo(evt)"
+            >
+              Info
+            </button>
             <!-- <p><button class="w3-button w3-block w3-theme-l4">Info</button></p> -->
           </div>
-          
         </div>
       </div>
-      <!-- <script src="https://apps.elfsight.com/p/platform.js" defer></script> 
+      <!-- <script src="https://apps.elfsight.com/p/platform.js" defer></script>
       <div class="elfsight-app-d2448649-3a02-497d-a17a-15543d4717ae"></div> -->
-      <br>
-      
-      <iframe width="210" height="200"
-      src="https://www.youtube.com/embed/p-uGsUu_olM">
+      <br />
+
+      <iframe
+        width="210"
+        height="200"
+        src="https://www.youtube.com/embed/p-uGsUu_olM"
+      >
       </iframe>
-      <br>
-    
-    <!-- End Right Column -->
+      <br />
+
+      <!-- End Right Column -->
     </div>
-    
-  <!-- End Grid -->
+
+    <!-- End Grid -->
   </div>
-  
-<!-- End Page Container -->
+
+  <!-- End Page Container -->
 </div>
-<br>
- 
+<br />
