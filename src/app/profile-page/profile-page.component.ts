@@ -7,6 +7,7 @@ import { UserService } from '../services/user.service';
 import { PostService } from '../services/post.service';
 import { Post } from '../models/post';
 import { SocketIoService } from '../services/socket-io.service';
+import { Register } from '../models/register';
 
 @Component({
   selector: 'app-profile-page',
@@ -21,10 +22,10 @@ export class ProfilePageComponent implements OnInit {
     title: "",
     postBody: "",
     name: "",
-    email:""
+    email: ""
   }
 
-  onPost(){
+  onPost() {
     console.log("Post Submitted");
     console.log(this.postForm);
     this.myPostService.creatPost(this.postForm.title, this.postForm.postBody, this.postForm.name, this.postForm.email)
@@ -33,27 +34,34 @@ export class ProfilePageComponent implements OnInit {
         this.postForm = {
           title: "",
           postBody: "",
-          name:"",
-          email:""
+          name: "",
+          email: ""
         }
       })
   }
 
 
   constructor(private myUserService: UserService, private myEventService: EventService, public dialog: MatDialog, public myPostService: PostService, private mySocketIoService: SocketIoService) { }
-  currentUser: any
+  currentUser: any = {
+    firstName: "",
+    lastName: "",
+    instruments: "",
+    genres: "",
+    cityState: "",
+  }
+
   ngOnInit(): void {
     this.myEventService.getAllEvents().subscribe(res => {
       console.log(res)
-      this.events=res;
+      this.events = res;
     });
 
     this.myPostService.getAllPosts().subscribe(res => {
       console.log(res)
-      this.posts=res;
+      this.posts = res;
     })
-    this.myUserService.getUserProfile().subscribe((myResponseObject:any) => {
-      console.log(myResponseObject.responseGroupie.firstName);
+    this.myUserService.getUserProfile().subscribe((myResponseObject: any) => {
+      console.log(myResponseObject.responseGroupie);
       this.currentUser = {
         firstName: myResponseObject.responseGroupie.firstName,
         lastName: myResponseObject.responseGroupie.lastName,
@@ -61,6 +69,7 @@ export class ProfilePageComponent implements OnInit {
         genres: myResponseObject.responseGroupie.genres,
         cityState: myResponseObject.responseGroupie.cityState,
       }
+      console.log(this.currentUser);
       //myResponseObject.responseGroupie;
     })
     console.log(this.currentUser);
