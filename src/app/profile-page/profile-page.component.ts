@@ -21,7 +21,7 @@ export class ProfilePageComponent implements OnInit {
     title: "",
     postBody: "",
     name: "",
-    email:""
+    email: "",
   }
 
   onPost(){
