@@ -11,11 +11,11 @@ export class SocketIoService {
 
   //Getting User Information
   userName: any;
-  configUrl = 'http://localhost:5000/api/socket/getUserName';
+  configUrl = 'http://ec2-54-174-209-56.compute-1.amazonaws.com/api/socket/getUserName';
 
   //Socket Connection Stuff...
   socket: any;
-  readonly uri: string = "http://localhost:5000";
+  readonly uri: string = "http://ec2-54-174-209-56.compute-1.amazonaws.com/";
 
 
   constructor(private http: HttpClient) {

@@ -11,7 +11,7 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
   userEmail:any;
-  configUrl = 'http://localhost:5000/api/posts/';
+  configUrl = 'http://ec2-54-174-209-56.compute-1.amazonaws.com/api/posts/';
 
 
   getAllPosts(): Observable<any>{

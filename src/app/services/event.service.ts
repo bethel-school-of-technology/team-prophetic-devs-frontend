@@ -12,7 +12,7 @@ export class EventService {
   user:{};
 
   profileInfo(): Observable<any>{
-    return this.http.get("http://localhost:5000/api/users/profile", {
+    return this.http.get("http://ec2-54-174-209-56.compute-1.amazonaws.com/api/users/profile", {
       headers: {
         authorization: localStorage.getItem('VIP Pass')
       }
@@ -29,6 +29,6 @@ export class EventService {
   }
 
   getAllEvents(): Observable<any>{
-    return this.http.get("http://localhost:3000/events");
+    return this.http.get("http://ec2-54-174-209-56.compute-1.amazonaws.com/api/events/getEvents");
   }
 }
