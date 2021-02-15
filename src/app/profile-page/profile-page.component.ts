@@ -21,7 +21,7 @@ export class ProfilePageComponent implements OnInit {
     title: "",
     postBody: "",
     name: "",
-    email: "",
+    email:""
   }
 
   onPost(){
@@ -36,12 +36,19 @@ export class ProfilePageComponent implements OnInit {
           name:"",
           email:""
         }
+        this.ngOnInit();
       })
   }
 
 
   constructor(private myUserService: UserService, private myEventService: EventService, public dialog: MatDialog, public myPostService: PostService, private mySocketIoService: SocketIoService) { }
-  currentUser: any
+  currentUser: any = {
+    firstName: '',
+        lastName: '',
+        instruments: '',
+        genres: '',
+        cityState: '',
+  }
   ngOnInit(): void {
     this.myEventService.getAllEvents().subscribe(res => {
       console.log(res)

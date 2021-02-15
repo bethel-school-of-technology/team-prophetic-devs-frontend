@@ -13,14 +13,14 @@ export class LogInComponent implements OnInit {
     email: "",
     password: "",
   }
-  
+
   logIn() {
     console.log("LogIn form submitted");
     this.myLoginService.logIn(this.loginForm.email,this.loginForm.password)
     .subscribe((Response: any) =>{
       console.log(Response)
       if(Response.status === 200){
-        window.alert("Login Successful") 
+        // window.alert("Login Successful")
         localStorage.setItem("VIP Pass", Response.token)
         this.myRouter.navigate(["/profile"])
       }
