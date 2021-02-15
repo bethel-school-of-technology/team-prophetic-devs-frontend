@@ -15,7 +15,7 @@ import { Login } from '../models/login';
       email: email,
       password: password
     }
-    return this.http.post("http://ec2-54-174-209-56.compute-1.amazonaws.com/api/users/login", login);
+    return this.http.post("/backend/api/users/login", login);
 
   }
 }

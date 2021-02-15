@@ -23,7 +23,7 @@ export class UserService {
       instruments: instruments,
       genres: genres,
     }
-    return this.http.post("http://ec2-54-174-209-56.compute-1.amazonaws.com/api/users/signup", register);
+    return this.http.post("/backend/api/users/signup", register);
 
   }
 //Login Function
@@ -32,7 +32,7 @@ export class UserService {
       email: email,
       password: password
     }
-    return this.http.post("http://ec2-54-174-209-56.compute-1.amazonaws.com/api/users/login", login)
+    return this.http.post("/backend/api/users/login", login)
   }
 //Function to make a server request to /api/users/profile route
 //type of request: GET
@@ -42,7 +42,7 @@ getUserProfile(): Observable<any>{
   let myHeaders = {
     Authorization: localStorage.getItem("VIP Pass")
   }
-  return this.http.get("http://ec2-54-174-209-56.compute-1.amazonaws.com/api/users/profile", {headers: myHeaders});
+  return this.http.get("/backend/api/users/profile", {headers: myHeaders});
 }
 
 }
