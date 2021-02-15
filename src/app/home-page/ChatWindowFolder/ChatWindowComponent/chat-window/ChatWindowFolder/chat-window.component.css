@@ -1,7 +1,7 @@
 
 .chatWindow, .chatWidowContainer, .form-feild {
   width: 100%;
-  background-color: powderblue;
+  background-color: rgba(63, 15, 165, .3);
 }
 
 .window{
@@ -16,7 +16,7 @@
 }
 
 .messageContainer {
-  background-color:powderblue;
+  background-color:rgba(63, 15, 165, 0.3);
   background-size: 100%;
   padding: 1em;
 }
