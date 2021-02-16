@@ -51,12 +51,12 @@ export class ProfilePageComponent implements OnInit {
   }
   ngOnInit(): void {
     this.myEventService.getAllEvents().subscribe(res => {
-      console.log(res)
+      // console.log(res)
       this.events=res;
     });
 
     this.myPostService.getAllPosts().subscribe(res => {
-      console.log(res)
+      // console.log(res)
       this.posts=res;
     })
     this.myUserService.getUserProfile().subscribe((myResponseObject:any) => {
@@ -70,7 +70,7 @@ export class ProfilePageComponent implements OnInit {
       }
       //myResponseObject.responseGroupie;
     })
-    console.log(this.currentUser);
+    // console.log(this.currentUser);
   }
   getInfo(evt: Event) {
     this.dialog.open(EventDialogComponent, {
