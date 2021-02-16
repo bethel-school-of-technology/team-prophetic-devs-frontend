@@ -56,7 +56,7 @@ export class ProfilePageComponent implements OnInit {
     });
 
     this.myPostService.getAllPosts().subscribe(res => {
-      // console.log(res)
+      console.log(res)
       this.posts=res;
     })
     this.myUserService.getUserProfile().subscribe((myResponseObject:any) => {
